@@ -1,0 +1,5 @@
+DISPLAY_NAME=bot com banco
+MAIN=index.js
+MEMORY=752
+VERSION=recommended
+LANGUAGE=node

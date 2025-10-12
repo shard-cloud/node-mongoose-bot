@@ -9,7 +9,7 @@ Todas as configurações sensíveis devem ser gerenciadas através de variáveis
 | Variável | Descrição | Exemplo | Como Obter |
 |----------|-----------|---------|------------|
 | `TOKEN` | Token de autenticação do bot Discord | `YOUR_BOT_TOKEN_HERE` | [Discord Developer Portal](https://discord.com/developers/applications) → Seu App → Bot → Token |
-| `DATABASE` | Connection string do MongoDB | `mongodb+srv://user:pass@cluster.mongodb.net/dbname` | MongoDB Atlas → Cluster → Connect → Connection String |
+| `DATABASE` | Connection string do MongoDB | `mongodb+srv://...` | ✅ **Configurado automaticamente pela ShardCloud** |
 
 ### Variáveis Opcionais
 
@@ -51,33 +51,30 @@ Ao gerar o link de convite do bot (OAuth2 → URL Generator), selecione no míni
 
 ## 🗄️ Configuração do MongoDB
 
-### Connection String
+### Database Gerenciado pela ShardCloud
 
-A connection string deve seguir um dos formatos:
+✅ **A ShardCloud configura automaticamente o MongoDB para você!**
 
-**MongoDB Atlas (Recomendado):**
+Quando você clona este template, a plataforma:
+- Cria uma instância MongoDB exclusiva para seu projeto
+- Gera e configura automaticamente a variável `DATABASE`
+- Gerencia autenticação e acesso de forma segura
+
+**Você não precisa:**
+- ❌ Criar conta no MongoDB Atlas
+- ❌ Configurar connection strings manualmente
+- ❌ Gerenciar usuários e senhas do banco
+- ❌ Configurar Network Access / IP Whitelist
+
+### Connection String (Referência)
+
+A variável `DATABASE` configurada automaticamente segue o formato:
+
 ```
-mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority
+mongodb+srv://<usuario>:<senha>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority
 ```
 
-**MongoDB Standalone:**
-```
-mongodb://<username>:<password>@<host>:<port>/<database>
-```
-
-### Parâmetros Importantes
-
-| Parâmetro | Descrição | Recomendado |
-|-----------|-----------|-------------|
-| `retryWrites=true` | Retry automático em falhas de escrita | Sim |
-| `w=majority` | Confirmação de escrita em maioria dos nós | Sim |
-| `authSource=admin` | Database de autenticação | Se necessário |
-
-### Segurança MongoDB Atlas
-
-- ✅ **Network Access**: Configure o IP `0.0.0.0/0` (permitir todos) ou adicione o IP da ShardCloud
-- ✅ **Database User**: Crie um usuário específico com permissões `readWrite` no database do bot
-- ✅ **Strong Password**: Use senhas fortes e complexas
+Todos os parâmetros de segurança e performance já vêm configurados pela ShardCloud.
 
 ---
 

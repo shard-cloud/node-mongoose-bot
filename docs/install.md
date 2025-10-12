@@ -25,31 +25,9 @@ Crie um bot no [Discord Developer Portal](https://discord.com/developers/applica
 
 ### 2. Banco de Dados MongoDB
 
-Você precisa de uma instância MongoDB. Opções recomendadas:
+✅ **Nada a fazer!** A ShardCloud cria e configura automaticamente um banco de dados MongoDB para você quando clona este template.
 
-**Opção A: MongoDB Atlas (Grátis)** ⭐ Recomendado
-
-1. Acesse https://www.mongodb.com/cloud/atlas/register
-2. Crie uma conta gratuita
-3. Crie um **Cluster Gratuito** (M0)
-4. Em **"Database Access"**, crie um usuário:
-   - Username: `bot-user` (ou qualquer nome)
-   - Password: Gere uma senha forte
-   - Database Privileges: `Read and write to any database`
-5. Em **"Network Access"**, adicione IP:
-   - Clique em **"Add IP Address"**
-   - Selecione **"Allow Access from Anywhere"** (0.0.0.0/0)
-   - Confirme
-6. Em **"Database" → "Connect"**:
-   - Escolha **"Connect your application"**
-   - Copie a **Connection String** (formato: `mongodb+srv://...`)
-   - Substitua `<password>` pela senha criada
-
-**Opção B: Outras Alternativas**
-
-- [Railway](https://railway.app/) — MongoDB gerenciado
-- [DigitalOcean](https://www.digitalocean.com/products/managed-databases-mongodb) — Database gerenciado
-- Instância própria MongoDB (se aplicável)
+A variável de ambiente `DATABASE` será configurada automaticamente pela plataforma.
 
 ---
 
@@ -57,37 +35,40 @@ Você precisa de uma instância MongoDB. Opções recomendadas:
 
 ### Passo 1: Clonar o Template
 
-Após clonar este template na **ShardCloud**, a plataforma instalará automaticamente as dependências.
+Ao clonar este template na **ShardCloud**, a plataforma automaticamente:
+- ✅ Instala todas as dependências
+- ✅ Cria um banco de dados MongoDB
+- ✅ Configura a variável `DATABASE` com a URL do banco
 
-### Passo 2: Configurar Variáveis de Ambiente
+### Passo 2: Configurar Variável de Ambiente
 
-Na interface da ShardCloud, configure as seguintes variáveis de ambiente:
+Na interface da ShardCloud, você só precisa configurar **UMA** variável:
 
-| Variável | Valor | Obrigatório |
-|----------|-------|-------------|
-| `TOKEN` | Token do seu bot Discord | ✅ Sim |
-| `DATABASE` | Connection string do MongoDB | ✅ Sim |
-| `PREFIX` | Prefixo dos comandos (padrão: `!`) | ❌ Não |
+| Variável | Valor | Configuração |
+|----------|-------|--------------|
+| `TOKEN` | Token do seu bot Discord | ✅ **Você precisa configurar** |
+| `DATABASE` | Connection string do MongoDB | ✅ **Configurado automaticamente pela ShardCloud** |
+| `PREFIX` | Prefixo dos comandos (padrão: `!`) | ❌ Opcional |
 
-**Exemplo de configuração:**
+**Como configurar:**
 
 ```env
 TOKEN=YOUR_DISCORD_BOT_TOKEN_HERE
-DATABASE=mongodb+srv://bot-user:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/discord-bot?retryWrites=true&w=majority
 PREFIX=!
 ```
 
-⚠️ **IMPORTANTE**: Substitua `YOUR_DISCORD_BOT_TOKEN_HERE` e `YOUR_PASSWORD` pelos valores reais obtidos nos pré-requisitos.
+⚠️ **IMPORTANTE**: Substitua `YOUR_DISCORD_BOT_TOKEN_HERE` pelo token real obtido no Discord Developer Portal.
 
 **Como configurar na ShardCloud:**
 
 1. Acesse o painel do seu projeto
 2. Vá para **"Environment Variables"** ou **"Configurações"**
-3. Adicione cada variável individualmente:
+3. Adicione a variável `TOKEN`:
    - Nome: `TOKEN`
    - Valor: Cole o token do Discord
    - Salve
-4. Repita para `DATABASE` e `PREFIX` (se desejar customizar)
+4. (Opcional) Adicione `PREFIX` se quiser usar outro prefixo além de `!`
+5. A variável `DATABASE` já estará configurada automaticamente ✅
 
 ### Passo 3: Iniciar o Bot
 
@@ -143,8 +124,8 @@ Quando você fizer alterações no código:
 | Problema | Solução |
 |----------|---------|
 | Bot não conecta | Verifique o `TOKEN` nas variáveis de ambiente |
-| Erro de banco de dados | Confirme a `DATABASE` connection string e IP whitelist |
-| Comandos não funcionam | Verifique se Message Content Intent está ativado |
+| Erro de banco de dados | A variável `DATABASE` deve estar configurada automaticamente pela ShardCloud |
+| Comandos não funcionam | Verifique se Message Content Intent está ativado no Discord |
 
 Para mais detalhes, consulte o guia de [Troubleshooting](troubleshooting.md).
 

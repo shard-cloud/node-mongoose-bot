@@ -69,51 +69,41 @@ Guia de solução de problemas comuns ao usar este template na **ShardCloud**.
 
 **Soluções**:
 
-1. **Verifique a connection string**:
+1. **Verifique se a variável DATABASE existe**:
    - Acesse variáveis de ambiente na ShardCloud
-   - Confirme que `DATABASE` está correta
-   - Formato esperado: `mongodb+srv://user:password@cluster.mongodb.net/database`
+   - Confirme que `DATABASE` está presente (deve ser configurada automaticamente)
+   - Se não existir, entre em contato com o suporte da ShardCloud
 
-2. **Verifique senha na connection string**:
-   - Se sua senha contém caracteres especiais (`@`, `#`, `%`, etc), encode-os:
-     - `@` → `%40`
-     - `#` → `%23`
-     - `%` → `%25`
-   - Ou regenere a senha com apenas letras e números
+2. **Faça redeploy do projeto**:
+   - Na ShardCloud, clique em **"Redeploy"** ou **"Restart"**
+   - Aguarde alguns minutos para a conexão ser estabelecida
+   - Verifique os logs para confirmar "MongoDB connected"
 
-3. **MongoDB Atlas - Network Access**:
-   - Acesse MongoDB Atlas → **Network Access**
-   - Adicione `0.0.0.0/0` (permitir de qualquer lugar)
-   - Aguarde 1-2 minutos para propagar
-   - Faça redeploy na ShardCloud
-
-4. **Verifique Database User**:
-   - MongoDB Atlas → **Database Access**
-   - Confirme que o usuário existe e tem privilégios `readWrite`
-   - Verifique se a senha está correta
+3. **Verifique status da plataforma**:
+   - Problemas de conectividade podem ser temporários
+   - Aguarde alguns minutos e tente novamente
+   - Se persistir, contate o suporte da ShardCloud
 
 ---
 
 ### ❌ Erro: "Authentication failed"
 
-**Causa**: Credenciais do MongoDB inválidas.
+**Causa**: Problema na autenticação com o MongoDB gerenciado.
 
 **Soluções**:
 
-1. **Verifique usuário e senha**:
-   - MongoDB Atlas → **Database Access**
-   - Edite o usuário ou crie um novo
-   - Gere uma senha forte e copie-a exatamente
+1. **Verifique a variável DATABASE**:
+   - Acesse variáveis de ambiente na ShardCloud
+   - **NÃO modifique** a variável `DATABASE` manualmente
+   - Ela deve ser gerenciada automaticamente pela plataforma
 
-2. **Atualize a connection string**:
-   - Formato: `mongodb+srv://<username>:<password>@...`
-   - Substitua `<username>` pelo nome do usuário
-   - Substitua `<password>` pela senha correta
-   - Atualize na ShardCloud e faça redeploy
+2. **Faça redeploy**:
+   - Clique em **"Redeploy"** na ShardCloud
+   - A plataforma regerará as credenciais se necessário
 
-3. **Teste a conexão**:
-   - Use [MongoDB Compass](https://www.mongodb.com/products/compass) para testar a connection string
-   - Se funcionar no Compass, o problema é na configuração da ShardCloud
+3. **Contate o suporte**:
+   - Se o erro persistir, o problema pode ser na configuração do banco pela plataforma
+   - Entre em contato com o suporte da ShardCloud
 
 ---
 
@@ -125,18 +115,20 @@ Guia de solução de problemas comuns ao usar este template na **ShardCloud**.
 
 1. **Verifique logs para detalhes**:
    - Logs na ShardCloud podem mostrar o erro exato do MongoDB
+   - Procure por stack traces que indiquem o problema específico
 
-2. **Verifique permissões do usuário**:
-   - MongoDB Atlas → **Database Access**
-   - Usuário deve ter `readWrite` no database correto
-
-3. **Confirme conexão estabelecida**:
+2. **Confirme conexão estabelecida**:
    - Nos logs, deve aparecer: `MongoDB connected`
    - Se não aparecer, volte para problemas de conexão acima
 
-4. **Valide o schema**:
+3. **Valide o schema**:
    - Se você modificou `database/schemas.js`, verifique a sintaxe
    - Faça rollback para o schema original e teste
+
+4. **Teste comando simples**:
+   - Execute `!create teste valor` no Discord
+   - Execute `!view` para ver se o registro foi criado
+   - Se `!view` mostrar dados, o problema é específico de um comando
 
 ---
 
@@ -304,10 +296,10 @@ Se todos os itens funcionam, o bot está 100% operacional!
 ### Diagnóstico Geral
 
 1. **Logs Completos**: Sempre consulte os logs na ShardCloud primeiro
-2. **Variáveis**: Revise TODAS as variáveis de ambiente
-3. **Intents**: Confirme Message Content Intent ativo
-4. **Network Access**: Confirme IP whitelisting no MongoDB Atlas
-5. **Permissões**: Confirme permissões do bot no servidor Discord
+2. **Variáveis**: Revise a variável `TOKEN` (DATABASE é automático)
+3. **Intents**: Confirme Message Content Intent ativo no Discord
+4. **Permissões**: Confirme permissões do bot no servidor Discord
+5. **Redeploy**: Tente fazer redeploy quando houver problemas persistentes
 
 ### Recursos Adicionais
 

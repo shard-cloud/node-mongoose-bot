@@ -7,7 +7,8 @@ Um bot Discord completo e funcional com integração MongoDB, pronto para ser im
 ### ✨ Características Principais
 
 - **Bot Discord Moderno**: Construído com Discord.js v14, a versão mais recente da biblioteca
-- **Banco de Dados MongoDB**: Integração nativa com Mongoose para persistência de dados
+- **Banco de Dados MongoDB Automático**: 🚀 A ShardCloud cria e configura o banco automaticamente para você!
+- **Zero Configuração de Database**: Não precisa criar conta no MongoDB Atlas ou configurar connection strings
 - **Sistema de Comandos Modular**: Arquitetura extensível que carrega comandos automaticamente
 - **ESM (ES Modules)**: Código moderno usando import/export nativo do Node.js
 - **Comandos Prontos**: Sistema funcional com comandos de exemplo:
@@ -72,11 +73,12 @@ Com esta base, você pode facilmente adicionar:
 
 ### 🌟 Por que escolher este template?
 
+- **Setup Instantâneo**: MongoDB configurado automaticamente pela ShardCloud
 - **Pronto para Produção**: Código testado e estruturado
 - **Fácil Manutenção**: Arquitetura modular e organizada
 - **Documentação Completa**: Guias detalhados para instalação e configuração
 - **Escalável**: Adicione novos recursos sem reescrever código existente
-- **Suporte ShardCloud**: Otimizado para deploy na plataforma
+- **Zero Burocracia**: Apenas configure o token do Discord e pronto!
 
 ---
 

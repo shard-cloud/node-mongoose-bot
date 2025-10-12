@@ -53,11 +53,11 @@ Guia de solução de problemas comuns ao usar este template na **ShardCloud**.
 3. **Se não aparecer "Logged in..."**:
    - Verifique a variável `TOKEN`
    - Confirme que o bot está habilitado no Discord Developer Portal
-   - Faça redeploy na ShardCloud
+   - Faça redeploy do projeto
 
 4. **Se o processo crashar imediatamente**:
    - Verifique se todas as dependências foram instaladas
-   - Confirme que você está usando Node.js 18+ na ShardCloud
+   - Confirme que você está usando Node.js 18+
 
 ---
 
@@ -70,19 +70,19 @@ Guia de solução de problemas comuns ao usar este template na **ShardCloud**.
 **Soluções**:
 
 1. **Verifique se a variável DATABASE existe**:
-   - Acesse variáveis de ambiente na ShardCloud
+   - Acesse variáveis de ambiente do projeto
    - Confirme que `DATABASE` está presente (deve ser configurada automaticamente)
-   - Se não existir, entre em contato com o suporte da ShardCloud
+   - Se não existir, entre em contato com o suporte
 
 2. **Faça redeploy do projeto**:
-   - Na ShardCloud, clique em **"Redeploy"** ou **"Restart"**
+   - Clique em **"Redeploy"** ou **"Restart"**
    - Aguarde alguns minutos para a conexão ser estabelecida
    - Verifique os logs para confirmar "MongoDB connected"
 
 3. **Verifique status da plataforma**:
    - Problemas de conectividade podem ser temporários
    - Aguarde alguns minutos e tente novamente
-   - Se persistir, contate o suporte da ShardCloud
+   - Se persistir, contate o suporte técnico
 
 ---
 
@@ -93,17 +93,17 @@ Guia de solução de problemas comuns ao usar este template na **ShardCloud**.
 **Soluções**:
 
 1. **Verifique a variável DATABASE**:
-   - Acesse variáveis de ambiente na ShardCloud
+   - Acesse variáveis de ambiente do projeto
    - **NÃO modifique** a variável `DATABASE` manualmente
-   - Ela deve ser gerenciada automaticamente pela plataforma
+   - Ela deve ser gerenciada automaticamente
 
 2. **Faça redeploy**:
-   - Clique em **"Redeploy"** na ShardCloud
-   - A plataforma regerará as credenciais se necessário
+   - Clique em **"Redeploy"** ou **"Restart"**
+   - As credenciais serão regeradas automaticamente se necessário
 
 3. **Contate o suporte**:
-   - Se o erro persistir, o problema pode ser na configuração do banco pela plataforma
-   - Entre em contato com o suporte da ShardCloud
+   - Se o erro persistir, o problema pode ser na configuração do banco
+   - Entre em contato com o suporte técnico
 
 ---
 
@@ -114,7 +114,7 @@ Guia de solução de problemas comuns ao usar este template na **ShardCloud**.
 **Soluções**:
 
 1. **Verifique logs para detalhes**:
-   - Logs na ShardCloud podem mostrar o erro exato do MongoDB
+   - Os logs podem mostrar o erro exato do MongoDB
    - Procure por stack traces que indiquem o problema específico
 
 2. **Confirme conexão estabelecida**:
@@ -206,7 +206,7 @@ Guia de solução de problemas comuns ao usar este template na **ShardCloud**.
 **Soluções**:
 
 1. **Verifique logs de deploy**:
-   - ShardCloud mostra logs durante o deploy
+   - Os logs mostram detalhes durante o deploy
    - Procure por erros específicos
 
 2. **Verifique `package.json`**:
@@ -216,11 +216,11 @@ Guia de solução de problemas comuns ao usar este template na **ShardCloud**.
 3. **Dependências faltando**:
    - Se logs mostram "Cannot find module", a dependência não foi instalada
    - Verifique se `package.json` contém todas as dependências necessárias
-   - Force reinstalação na ShardCloud (delete `node_modules` ou redeploy)
+   - Force reinstalação fazendo um redeploy
 
 4. **Versão do Node.js**:
    - Este projeto requer Node.js 18+
-   - Configure na ShardCloud se necessário
+   - Verifique a versão configurada no projeto
 
 ---
 
@@ -230,7 +230,7 @@ Guia de solução de problemas comuns ao usar este template na **ShardCloud**.
 
 **Soluções**:
 
-1. **Analise os logs na ShardCloud**:
+1. **Analise os logs**:
    - Identifique a mensagem de erro específica
    - Procure stack trace completo
 
@@ -245,11 +245,11 @@ Guia de solução de problemas comuns ao usar este template na **ShardCloud**.
 
 ---
 
-## 📝 Como Verificar Configurações na ShardCloud
+## 📝 Como Verificar Configurações
 
 ### Verificar Variáveis de Ambiente
 
-1. Acesse painel do projeto na ShardCloud
+1. Acesse o painel do projeto
 2. Vá para **"Environment Variables"** ou **"Configurações"**
 3. Confirme que as seguintes variáveis existem:
    - `TOKEN` → Token do Discord bot
@@ -258,7 +258,7 @@ Guia de solução de problemas comuns ao usar este template na **ShardCloud**.
 
 ### Verificar Logs
 
-1. Acesse painel do projeto
+1. Acesse o painel do projeto
 2. Vá para **"Logs"** ou **"Console"**
 3. Logs em tempo real mostrarão:
    - Conexões bem-sucedidas
@@ -309,11 +309,11 @@ Se todos os itens funcionam, o bot está 100% operacional!
 - **Mongoose Docs**: https://mongoosejs.com/docs/
 - **Discord Developer Portal**: https://discord.com/developers/docs
 
-### Suporte ShardCloud
+### Suporte
 
-Para problemas específicos da plataforma ShardCloud:
-- Consulte a documentação oficial da ShardCloud
-- Entre em contato com o suporte da plataforma
+Para problemas específicos da plataforma:
+- Consulte a documentação oficial
+- Entre em contato com o suporte técnico
 - Verifique status da plataforma em caso de instabilidade
 
 ---

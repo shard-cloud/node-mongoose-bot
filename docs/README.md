@@ -2,13 +2,13 @@
 
 ## 🚀 O que você recebe neste template
 
-Um bot Discord completo e funcional com integração MongoDB, pronto para ser implantado na **ShardCloud**. Este template fornece uma base sólida e escalável para criar bots personalizados com persistência de dados.
+Um bot Discord completo e funcional com integração MongoDB, pronto para produção. Este template fornece uma base sólida e escalável para criar bots personalizados com persistência de dados.
 
 ### ✨ Características Principais
 
 - **Bot Discord Moderno**: Construído com Discord.js v14, a versão mais recente da biblioteca
-- **Banco de Dados MongoDB Automático**: 🚀 A ShardCloud cria e configura o banco automaticamente para você!
-- **Zero Configuração de Database**: Não precisa criar conta no MongoDB Atlas ou configurar connection strings
+- **Banco de Dados MongoDB Automático**: 🚀 O banco de dados é criado e configurado automaticamente para você!
+- **Zero Configuração de Database**: Não precisa criar conta no MongoDB Atlas ou configurar connection strings manualmente
 - **Sistema de Comandos Modular**: Arquitetura extensível que carrega comandos automaticamente
 - **ESM (ES Modules)**: Código moderno usando import/export nativo do Node.js
 - **Comandos Prontos**: Sistema funcional com comandos de exemplo:
@@ -73,7 +73,7 @@ Com esta base, você pode facilmente adicionar:
 
 ### 🌟 Por que escolher este template?
 
-- **Setup Instantâneo**: MongoDB configurado automaticamente pela ShardCloud
+- **Setup Instantâneo**: MongoDB configurado automaticamente
 - **Pronto para Produção**: Código testado e estruturado
 - **Fácil Manutenção**: Arquitetura modular e organizada
 - **Documentação Completa**: Guias detalhados para instalação e configuração
@@ -84,7 +84,7 @@ Com esta base, você pode facilmente adicionar:
 
 ## 🚀 Próximos Passos
 
-**Clone este template na ShardCloud** e siga o guia de [Instalação](install.md) para colocar seu bot online em minutos!
+Siga o guia de [Instalação](install.md) para colocar seu bot online em minutos!
 
 Após o deploy, confira a [Configuração](config.md) para personalizar o comportamento do bot e a seção de [Troubleshooting](troubleshooting.md) caso encontre algum problema.
 

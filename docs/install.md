@@ -1,8 +1,8 @@
-# Instalação e Deploy na ShardCloud
+# Instalação e Deploy
 
 ## 📋 Pré-requisitos
 
-Antes de clonar este template na ShardCloud, você precisará ter:
+Antes de clonar este template, você precisará ter:
 
 ### 1. Bot do Discord Configurado
 
@@ -25,29 +25,29 @@ Crie um bot no [Discord Developer Portal](https://discord.com/developers/applica
 
 ### 2. Banco de Dados MongoDB
 
-✅ **Nada a fazer!** A ShardCloud cria e configura automaticamente um banco de dados MongoDB para você quando clona este template.
+✅ **Nada a fazer!** Um banco de dados MongoDB é criado e configurado automaticamente para você quando clona este template.
 
-A variável de ambiente `DATABASE` será configurada automaticamente pela plataforma.
+A variável de ambiente `DATABASE` será configurada automaticamente.
 
 ---
 
-## 🚀 Deploy na ShardCloud
+## 🚀 Deploy
 
 ### Passo 1: Clonar o Template
 
-Ao clonar este template na **ShardCloud**, a plataforma automaticamente:
+Ao clonar este template, a plataforma automaticamente:
 - ✅ Instala todas as dependências
 - ✅ Cria um banco de dados MongoDB
 - ✅ Configura a variável `DATABASE` com a URL do banco
 
 ### Passo 2: Configurar Variável de Ambiente
 
-Na interface da ShardCloud, você só precisa configurar **UMA** variável:
+Você só precisa configurar **UMA** variável de ambiente:
 
 | Variável | Valor | Configuração |
 |----------|-------|--------------|
 | `TOKEN` | Token do seu bot Discord | ✅ **Você precisa configurar** |
-| `DATABASE` | Connection string do MongoDB | ✅ **Configurado automaticamente pela ShardCloud** |
+| `DATABASE` | Connection string do MongoDB | ✅ **Configurado automaticamente** |
 | `PREFIX` | Prefixo dos comandos (padrão: `!`) | ❌ Opcional |
 
 **Como configurar:**
@@ -59,7 +59,7 @@ PREFIX=!
 
 ⚠️ **IMPORTANTE**: Substitua `YOUR_DISCORD_BOT_TOKEN_HERE` pelo token real obtido no Discord Developer Portal.
 
-**Como configurar na ShardCloud:**
+**Como configurar:**
 
 1. Acesse o painel do seu projeto
 2. Vá para **"Environment Variables"** ou **"Configurações"**
@@ -72,8 +72,8 @@ PREFIX=!
 
 ### Passo 3: Iniciar o Bot
 
-1. Na ShardCloud, clique em **"Deploy"** ou **"Start"**
-2. A plataforma executará automaticamente:
+1. Clique em **"Deploy"** ou **"Start"**
+2. O sistema executará automaticamente:
    ```bash
    npm install  # Instalação de dependências
    node index.js  # Inicialização do bot
@@ -105,8 +105,8 @@ Se você ver essas mensagens, parabéns! Seu bot está online. 🎉
 Quando você fizer alterações no código:
 
 1. Faça commit das mudanças no repositório
-2. Na ShardCloud, clique em **"Redeploy"** ou **"Restart"**
-3. A plataforma baixará as alterações e reiniciará o bot
+2. Clique em **"Redeploy"** ou **"Restart"**
+3. O sistema baixará as alterações e reiniciará o bot
 
 ---
 
@@ -124,7 +124,7 @@ Quando você fizer alterações no código:
 | Problema | Solução |
 |----------|---------|
 | Bot não conecta | Verifique o `TOKEN` nas variáveis de ambiente |
-| Erro de banco de dados | A variável `DATABASE` deve estar configurada automaticamente pela ShardCloud |
+| Erro de banco de dados | A variável `DATABASE` deve estar configurada automaticamente |
 | Comandos não funcionam | Verifique se Message Content Intent está ativado no Discord |
 
 Para mais detalhes, consulte o guia de [Troubleshooting](troubleshooting.md).

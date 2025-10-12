@@ -2,14 +2,14 @@
 
 ## 🔐 Variáveis de Ambiente
 
-Todas as configurações sensíveis devem ser gerenciadas através de variáveis de ambiente **na ShardCloud**. Nunca inclua tokens ou senhas diretamente no código.
+Todas as configurações sensíveis devem ser gerenciadas através de variáveis de ambiente. Nunca inclua tokens ou senhas diretamente no código.
 
 ### Variáveis Obrigatórias
 
 | Variável | Descrição | Exemplo | Como Obter |
 |----------|-----------|---------|------------|
 | `TOKEN` | Token de autenticação do bot Discord | `YOUR_BOT_TOKEN_HERE` | [Discord Developer Portal](https://discord.com/developers/applications) → Seu App → Bot → Token |
-| `DATABASE` | Connection string do MongoDB | `mongodb+srv://...` | ✅ **Configurado automaticamente pela ShardCloud** |
+| `DATABASE` | Connection string do MongoDB | `mongodb+srv://...` | ✅ **Configurado automaticamente** |
 
 ### Variáveis Opcionais
 
@@ -51,14 +51,14 @@ Ao gerar o link de convite do bot (OAuth2 → URL Generator), selecione no míni
 
 ## 🗄️ Configuração do MongoDB
 
-### Database Gerenciado pela ShardCloud
+### Database Gerenciado Automaticamente
 
-✅ **A ShardCloud configura automaticamente o MongoDB para você!**
+✅ **O MongoDB é configurado automaticamente para você!**
 
-Quando você clona este template, a plataforma:
-- Cria uma instância MongoDB exclusiva para seu projeto
-- Gera e configura automaticamente a variável `DATABASE`
-- Gerencia autenticação e acesso de forma segura
+Quando você clona este template:
+- Uma instância MongoDB exclusiva é criada para seu projeto
+- A variável `DATABASE` é gerada e configurada automaticamente
+- Autenticação e acesso são gerenciados de forma segura
 
 **Você não precisa:**
 - ❌ Criar conta no MongoDB Atlas
@@ -74,7 +74,7 @@ A variável `DATABASE` configurada automaticamente segue o formato:
 mongodb+srv://<usuario>:<senha>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority
 ```
 
-Todos os parâmetros de segurança e performance já vêm configurados pela ShardCloud.
+Todos os parâmetros de segurança e performance já vêm pré-configurados.
 
 ---
 

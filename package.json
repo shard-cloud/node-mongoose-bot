@@ -7,7 +7,13 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["discord", "bot", "mongodb", "mongoose", "discord.js"],
+  "keywords": [
+    "discord",
+    "bot",
+    "mongodb",
+    "mongoose",
+    "discord.js"
+  ],
   "author": "ShardCloud",
   "license": "MIT",
   "type": "module",

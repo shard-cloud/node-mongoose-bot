@@ -9,7 +9,7 @@
   },
   "keywords": ["discord", "bot", "mongodb", "mongoose", "discord.js"],
   "author": "ShardCloud",
-  "license": "ISC",
+  "license": "MIT",
   "type": "module",
   "dependencies": {
     "discord.js": "^14.22.1",
